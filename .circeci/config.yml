@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    macos:
+    steps:
+      - checkout
+      - run:
+          name: Install qt4
+          command: brew install qt4
+      - run:
+          name: Install cmake
+          command: brew install cmake
+      - run:
+          name: Run OSX Build script
+          command: bash <(build-for-osx.sh)
+
