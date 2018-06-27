@@ -10,6 +10,7 @@ jobs:
   include:
     - stage: Build and install OpenSCAP
       script:
+        - xcode-select --install
         - git clone --depth 1 https://github.com/OpenSCAP/openscap.git
         - pushd openscap
         - ./autogen.sh
