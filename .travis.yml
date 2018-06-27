@@ -1,5 +1,5 @@
 os: osx
-osx_image: xcode8.3
+osx_image: xcode9.4
 before_install:
   - brew update
   - brew install cartr/qt4/qt
@@ -12,7 +12,7 @@ jobs:
       script:
         - git clone --depth 1 https://github.com/OpenSCAP/openscap.git -b master
         - pushd openscap/build
-        - cmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DENABLE_PYTHON3=false -DENABLE_PROBES=false -DENABLE_OSCAP_UTIL_DOCKER=false ../
+        - cmake -DENABLE_PYTHON3=false -DENABLE_PROBES=false -DENABLE_OSCAP_UTIL_DOCKER=false ../
         - make -j 4
         - make install
         - popd
