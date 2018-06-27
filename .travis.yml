@@ -4,6 +4,8 @@ before_install:
   - brew update
   - brew install cartr/qt4/qt
 
+language: c
+
 jobs:
   include:
     - stage: Build and install OpenSCAP
