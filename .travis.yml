@@ -2,4 +2,6 @@ os: osx
 before_install:
   - brew update
   - brew install cartr/qt4/qt
-  - brew install cmake
+
+script:
+  - ./build-for-osx.sh
