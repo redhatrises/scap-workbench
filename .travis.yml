@@ -3,6 +3,7 @@ osx_image: xcode9.4
 before_install:
   - brew update
   - brew install cartr/qt4/qt
+  - brew install asciidoctor
 
 language: c
 
@@ -16,6 +17,7 @@ jobs:
         - make -j 4
         - make install
         - popd
-    - stage: Build scap-workbench
-      script:
         - ./build-for-osx.sh
+#    - stage: Build scap-workbench
+#script:
+#- ./build-for-osx.sh
