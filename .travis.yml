@@ -1,7 +1,12 @@
 os: osx
+osx_image: xcode8
 before_install:
   - brew update
   - brew install cartr/qt4/qt
 
+jobs:
+  include:
+    - stage: Build and install OpenSCAP
+      script: 
 script:
   - ./build-for-osx.sh
