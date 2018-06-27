@@ -1,12 +1,3 @@
-mkdir -p build-oscap-osx/
-pushd build-oscap-osx/
-git clone --depth 1 https://github.com/OpenSCAP/openscap.git -b master
-pushd openscap/build
-cmake -D ENABLE_PYTHON3=false -D ENABLE_PROBES=false -D ENABLE_OSCAP_UTIL_DOCKER=false ../
-make -j 4
-make install
-popd
-popd
 mkdir -p build-osx/
 pushd build-osx/
 cmake -D SCAP_WORKBENCH_LOCAL_SCAN_ENABLED=false -D SCAP_AS_RPM_EXECUTABLE="" ../
