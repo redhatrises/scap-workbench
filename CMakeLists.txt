@@ -16,13 +16,13 @@ include(${QT_USE_FILE})
 # custom openscap parameters.
 if (NOT DEFINED OPENSCAP_LIBRARIES OR NOT DEFINED OPENSCAP_INCLUDE_DIRS)
     include("${CMAKE_ROOT}/Modules/FindPkgConfig.cmake")
-    pkg_check_modules(OPENSCAP REQUIRED libopenscap>=1.2.0)
+    #    pkg_check_modules(OPENSCAP REQUIRED libopenscap>=1.2.0)
 endif()
 
 # Gather info about openscap version
 if (DEFINED OPENSCAP_VERSION)
     # pkg_check_modules() defines the string OPENSCAP_VERSION, lets use it
-    string(REPLACE "." ";" OPENSCAP_VERSION_LIST ${OPENSCAP_VERSION})
+    #string(REPLACE "." ";" OPENSCAP_VERSION_LIST ${OPENSCAP_VERSION})
     list(GET OPENSCAP_VERSION_LIST 0 OPENSCAP_VERSION_MAJOR)
     list(GET OPENSCAP_VERSION_LIST 1 OPENSCAP_VERSION_MINOR)
     list(GET OPENSCAP_VERSION_LIST 2 OPENSCAP_VERSION_PATCH)
