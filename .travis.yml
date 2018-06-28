@@ -8,7 +8,7 @@ before_install:
 language: c
 
 compiler:
-  - gcc
+  - gcc -m32
 
 jobs:
   include:
