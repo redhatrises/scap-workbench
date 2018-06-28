@@ -4,19 +4,18 @@ sudo: required
 
 before_install:
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/gcc
-  - sudo rm /usr/bin/gcc
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/g++
-  - sudo rm /usr/bin/g++
   - sudo rm /usr/local/include/c++
   - brew update
   - brew install cartr/qt4/qt
   - brew install asciidoctor
   - brew install gcc
+  - export CC=/usr/local/bin/gcc
 
 language: c++
 
 compiler:
-  - gcc-7
+  - gcc
 
 script:
   - git clone --depth 1 https://github.com/redhatrises/openscap.git -b ssize
