@@ -15,6 +15,7 @@ before_install:
   - brew install cartr/qt4/qt
   - brew install asciidoctor
   - brew install gcc
+  - sudo find / -name g++
   - export CC=/usr/local/Cellar/gcc
   - export CXX=/usr/local/Cellar/g++
 
