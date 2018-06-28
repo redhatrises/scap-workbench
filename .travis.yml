@@ -2,6 +2,11 @@ os: osx
 osx_image: xcode8.3
 sudo: required
 
+language: c++
+
+compiler:
+  - gcc
+
 before_install:
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/gcc
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/g++
@@ -10,20 +15,18 @@ before_install:
   - brew install cartr/qt4/qt
   - brew install asciidoctor
   - brew install gcc
+  - find / -name gcc
   - export CC=/usr/local/bin/gcc
 
-language: c++
-
-compiler:
-  - gcc
-
-script:
+before_script:
   - git clone --depth 1 https://github.com/redhatrises/openscap.git -b ssize
   - pushd openscap/build
   - cmake -DENABLE_PYTHON3=false -DENABLE_PROBES=false -DENABLE_OSCAP_UTIL_DOCKER=false ../
   - make -j 4
   - make install
   - popd
+
+script:
   - ./build-for-osx.sh
   - wget https://github.com/OpenSCAP/scap-security-guide/releases/download/v0.1.31/scap-security-guide-0.1.31.zip -O ssg.zip
   - unzip ssg.zip -d `pwd`/scap-workbench.app/Contents/Resources/ssg/
