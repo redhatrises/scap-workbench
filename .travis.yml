@@ -4,7 +4,9 @@ sudo: required
 
 before_install:
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/gcc
+  - sudo rm /usr/bin/gcc
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+  - sudo rm /usr/bin/g++
   - sudo rm /usr/local/include/c++
   - brew update
   - brew install cartr/qt4/qt
