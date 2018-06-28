@@ -2,7 +2,7 @@ os: osx
 osx_image: xcode9.4
 before_install:
   - brew update
-  - brew unlink gcc && brew install gcc
+  - brew link --overwrite gcc
   - brew install cartr/qt4/qt
   - brew install asciidoctor
 
