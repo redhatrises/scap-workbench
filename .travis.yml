@@ -8,7 +8,7 @@ before_install:
 language: c
 
 compiler:
-  - lang
+  - clang
 
 jobs:
   include:
