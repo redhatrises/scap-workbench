@@ -1,6 +1,9 @@
 os: osx
 osx_image: xcode8.3
+sudo: required
+
 before_install:
+  - sudo /Developer/Library/uninstall-devtools --mode=all
   - brew update
   - brew install cartr/qt4/qt
   - brew install asciidoctor
@@ -11,7 +14,6 @@ compiler:
   - gcc
 
 script:
-  - find / -name *gcc*
   - git clone --depth 1 https://github.com/redhatrises/openscap.git -b ssize
   - pushd openscap/build
   - cmake -DENABLE_PYTHON3=false -DENABLE_PROBES=false -DENABLE_OSCAP_UTIL_DOCKER=false ../
