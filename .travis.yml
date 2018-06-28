@@ -7,11 +7,9 @@ before_install:
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/g++
   - sudo rm /usr/local/include/c++
   - brew update
-  - brew install cartr/qt4/qt
-  - brew install qt
+  - brew install qt@4
   - brew install asciidoctor
   - brew install gcc
-  - brew install gcc-c++
 
 language: c++
 
