@@ -3,7 +3,7 @@ osx_image: xcode8.3
 sudo: required
 
 before_install:
-  - sudo /Developer/Library/uninstall-devtools --mode=all
+  - rm /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/gcc*
   - brew update
   - brew install cartr/qt4/qt
   - brew install asciidoctor
