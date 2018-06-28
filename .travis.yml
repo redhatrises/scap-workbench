@@ -5,6 +5,8 @@ before_install:
   - brew install cartr/qt4/qt
   - brew install asciidoctor
 
+language: c++
+
 compiler:
   - gcc
 
