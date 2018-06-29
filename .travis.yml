@@ -15,9 +15,9 @@ before_install:
   - brew install cartr/qt4/qt
   - brew install asciidoctor
   - brew install gcc
-  - sudo find /usr/local -name g++
+  - sudo find /usr -name g++
   - export CC=/usr/local/Cellar/gcc
-    #  - export CXX=/usr/local/Cellar/g++
+  - export CXX=/usr/local/Cellar/g++
 
 before_script:
   - git clone --depth 1 https://github.com/redhatrises/openscap.git -b ssize
