@@ -12,12 +12,11 @@ before_install:
   - sudo rm /Applications/Xcode.app/Contents/Developer/usr/bin/g++
   - sudo rm /usr/local/include/c++
   - brew update
-  - brew install cartr/qt4/qt
+  - brew install cartr/qt4/qt@4
   - brew install asciidoctor
   - brew install gcc
-  - sudo find /usr -name "g++*"
-  - export CC=/usr/local/Cellar/gcc
-  - export CXX=/usr/local/Cellar/g++
+  - export CC=/usr/local/bin/gcc-8
+  - export CXX=/usr/local/bin/g++-8
 
 before_script:
   - git clone --depth 1 https://github.com/redhatrises/openscap.git -b ssize
