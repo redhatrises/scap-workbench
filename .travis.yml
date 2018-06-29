@@ -10,6 +10,7 @@ compiler:
 before_install:
   - brew update
   - brew install jq
+  - jq -r ".assets[] | select(.name | test(\".zip\")) | .browser_download_url"
   - brew install cartr/qt4/qt@4
   - brew install asciidoctor
 
