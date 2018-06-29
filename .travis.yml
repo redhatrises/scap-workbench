@@ -15,7 +15,7 @@ before_install:
 before_script:
   - git clone --depth 1 https://github.com/redhatrises/openscap.git -b ssize
   - pushd openscap/build
-  - cmake -DENABLE_PYTHON3=false -DENABLE_PROBES=false -DENABLE_OSCAP_UTIL_DOCKER=false ../
+  - CXXFLAGS="-m64" cmake -DENABLE_PYTHON3=false -DENABLE_PROBES=false -DENABLE_OSCAP_UTIL_DOCKER=false ../
   - make -j 4
   - make install
   - popd
