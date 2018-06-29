@@ -25,3 +25,11 @@ script:
   - wget https://github.com/OpenSCAP/scap-security-guide/releases/download/v0.1.31/scap-security-guide-0.1.31.zip -O ssg.zip
   - mkdir -p `pwd`/scap-workbench.app/Contents/Resources/ssg/ && unzip ssg.zip -d `pwd`/scap-workbench.app/Contents/Resources/ssg/
   - cd build-osx && sh osx-create-dmg.sh
+
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: scap-workbench-$TRAVIS_TAG.dmg
+  skip_cleanup: true
+  on:
+    tags: true
