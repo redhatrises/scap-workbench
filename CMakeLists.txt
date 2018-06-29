@@ -13,6 +13,7 @@ find_package(Qt4 REQUIRED QtCore QtGui QtXmlPatterns)
 include(${QT_USE_FILE})
 
 find_path(OPENSCAP_INCLUDE NAMES openscap/oscap.h)
+find_library(OPENSCAP_LIBRARIES NAMES libopenscap)
 set(OPENSCAP_INCLUDE_DIRS "${OPENSCAP_INCLUDE}/openscap")
 
 # This conditional is here to avoid checking openscap version if user supplies
