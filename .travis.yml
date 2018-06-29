@@ -9,7 +9,7 @@ compiler:
 
 before_install:
   - HOMEBREW_NO_AUTO_UPDATE=1 brew install jq
-  - sh test.sh
+  - curl -s https://api.github.com/repos/openscap/scap-security-guide/releases/latest | grep browser_download_url | tail -1 | cut -d'"' -f4
   - brew install cartr/qt4/qt@4
   - brew install asciidoctor
 
