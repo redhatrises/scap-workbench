@@ -9,6 +9,7 @@ compiler:
 
 before_install:
   - brew update
+  - brew install jq
   - brew install cartr/qt4/qt@4
   - brew install asciidoctor
 
