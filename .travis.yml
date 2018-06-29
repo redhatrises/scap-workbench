@@ -15,7 +15,7 @@ before_install:
 before_script:
   - git clone --depth 1 https://github.com/openscap/openscap.git -b master
   - pushd openscap/build
-  - cmake ../
+  - cmake -DENABLE_PROBES=FALSE ../
   - make -j 4
   - make install
   - popd
