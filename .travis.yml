@@ -2,7 +2,7 @@ os: osx
 osx_image: xcode8.3
 sudo: required
 
-language: c++
+language: cpp
 
 compiler:
   - gcc
@@ -11,7 +11,6 @@ before_install:
   - brew update
   - brew install cartr/qt4/qt@4
   - brew install asciidoctor
-  - export CC=/usr/bin/gcc -m64
 
 before_script:
   - git clone --depth 1 https://github.com/redhatrises/openscap.git -b ssize
