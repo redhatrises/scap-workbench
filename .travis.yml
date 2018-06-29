@@ -23,5 +23,5 @@ before_script:
 script:
   - ./build-for-osx.sh
   - wget https://github.com/OpenSCAP/scap-security-guide/releases/download/v0.1.31/scap-security-guide-0.1.31.zip -O ssg.zip
-  - unzip ssg.zip -d `pwd`/scap-workbench.app/Contents/Resources/ssg/
-  - ./osx-create-dmg.sh
+  - mkdir -p `pwd`/scap-workbench.app/Contents/Resources/ssg/ && unzip ssg.zip -d `pwd`/scap-workbench.app/Contents/Resources/ssg/
+  - sh osx-create-dmg.sh
