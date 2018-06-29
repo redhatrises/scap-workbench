@@ -8,9 +8,9 @@ compiler:
   - gcc
 
 before_install:
-  - brew update
-  - brew install jq
-  - jq -r ".assets[] | select(.name | test(\".zip\")) | .browser_download_url"
+#  - brew update
+  - HOMEBREW_NO_AUTO_UPDATE=1 brew install jq
+  - `curl -s https://api.github.com/repos/openscap/scap-security-guide/releases/latest | jq -r ".assets[] | select(.name | test(\".zip\")) | .browser_download_url"`
   - brew install cartr/qt4/qt@4
   - brew install asciidoctor
 
