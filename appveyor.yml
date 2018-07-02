@@ -7,5 +7,6 @@ install:
 cache: c:\tools\vcpkg\installed\
 before_build:
 - cmd: >-
-    cd build
+    git clone --depth 1 https://github.com/openscap/openscap.git -b master
+    cd openscap/build
     cmake -DENABLE_PYTHON3=FALSE -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
