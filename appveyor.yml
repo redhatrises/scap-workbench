@@ -3,7 +3,7 @@ image: Visual Studio 2017
 configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
-        - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
+    - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads Qt4
 cache: c:\tools\vcpkg\installed\
 before_build:
 - cmd: >-
@@ -16,4 +16,11 @@ before_build:
     msbuild "c:\projects\scap-workbench\openscap\build\openscap.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
     popd
-    
+
+    cd build
+
+    cmake -D SCAP_WORKBENCH_LOCAL_SCAN_ENABLED=false -D SCAP_AS_RPM_EXECUTABLE="" -D SSH_EXECUTABLE="ssh.exe" -D NICE_EXECUTABLE="" -D SETSID_EXECUTABLE=""
+
+build:
+    project: c:\projects\scap-workbench\build\openscap.sln
+    verbosity: minimal
