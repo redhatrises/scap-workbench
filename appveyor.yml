@@ -4,7 +4,7 @@ configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
     - cmd: >-
-       curl -fsS -o rubyinstaller-2.5.1-2-x64.exe https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-2.5.1-2-x64.exe
+       curl -fsSL -o rubyinstaller-2.5.1-2-x64.exe https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-2.5.1-2-x64.exe
 
        rubyinstaller-2.5.1-2-x64.exe /verysilent /tasks="modpath"
 
