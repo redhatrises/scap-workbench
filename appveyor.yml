@@ -4,7 +4,7 @@ configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
     - cmd: >-
-       curk -fsS -o rubyinstaller-2.5.1-2-x64.exe https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-2.5.1-2-x64.exe
+       curl -fsS -o rubyinstaller-2.5.1-2-x64.exe https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-2.5.1-2-x64.exe
 
        rubyinstaller-2.5.1-2-x64.exe /verysilent /tasks="modpath"
 
@@ -14,7 +14,9 @@ install:
 
     - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
     - cmd: gem install asciidoctor
+
 cache: c:\tools\vcpkg\installed\
+
 before_build:
 - cmd: >-
     git clone --depth 1 https://github.com/openscap/openscap.git -b master
