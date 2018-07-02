@@ -20,7 +20,7 @@ before_build:
 
     msbuild "c:\projects\scap-workbench\openscap\build\openscap.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-    cd ..\..\build
+    cd C:/projects/scap-workbench/build
 
     cmake -D SCAP_WORKBENCH_LOCAL_SCAN_ENABLED=false -D SCAP_AS_RPM_EXECUTABLE="" -D SSH_EXECUTABLE="ssh.exe" -D NICE_EXECUTABLE="" -D SETSID_EXECUTABLE=""
 
