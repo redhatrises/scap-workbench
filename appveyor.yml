@@ -3,7 +3,12 @@ image: Visual Studio 2017
 configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
-    - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads qt
+    - cmd: >-
+       curl http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe --output qt-opensource-windows-x86-vs2010-4.8.7.exe
+
+       qt-opensource-windows-x86-vs2010-4.8.7.exe /S
+
+    - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
 cache: c:\tools\vcpkg\installed\
 before_build:
 - cmd: >-
