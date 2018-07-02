@@ -1,0 +1,11 @@
+version: master-{build}
+image: Visual Studio 2017
+configuration: Release
+clone_folder: c:\projects\scap-workbench
+install:
+- cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads qt4
+cache: c:\tools\vcpkg\installed\
+before_build:
+- cmd: >-
+    cd build
+    cmake -DENABLE_PYTHON3=FALSE -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
