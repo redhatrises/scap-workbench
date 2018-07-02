@@ -4,11 +4,16 @@ configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
     - cmd: >-
+       curk -fsS -o rubyinstaller-2.5.1-2-x64.exe https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-2.5.1-2-x64.exe
+
+       rubyinstaller-2.5.1-2-x64.exe /verysilent /tasks="modpath"
+
        curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
 
        qt-opensource-windows-x86-vs2010-4.8.7.exe /S
 
     - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
+    - cmd: gem install asciidoctor
 cache: c:\tools\vcpkg\installed\
 before_build:
 - cmd: >-
