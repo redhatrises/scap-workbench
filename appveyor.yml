@@ -4,7 +4,7 @@ configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
     - cmd: >-
-       curl http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe --output qt-opensource-windows-x86-vs2010-4.8.7.exe
+       curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
 
        qt-opensource-windows-x86-vs2010-4.8.7.exe /S
 
