@@ -3,10 +3,11 @@ image: Visual Studio 2017
 configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
-- cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads qt4
+        - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads qt4:x64-windows
 cache: c:\tools\vcpkg\installed\
 before_build:
 - cmd: >-
     git clone --depth 1 https://github.com/openscap/openscap.git -b master
     cd openscap/build
     cmake -DENABLE_PYTHON3=FALSE -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+    
