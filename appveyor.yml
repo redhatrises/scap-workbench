@@ -33,7 +33,7 @@ before_build:
 
     msbuild "c:\projects\scap-workbench\openscap\build\openscap.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-    for /r %%F in (.) do robocopy /nfl /ndl /njh /njs /nc /ns /np "%%F" Release\includes\ *.h /COPYALL /R:0
+    for /r %%F in (.) do robocopy /ndl /njh /njs /nc /ns "%%F" Release\includes\ *.h /COPYALL
 
     cd C:/projects/scap-workbench/build
 
