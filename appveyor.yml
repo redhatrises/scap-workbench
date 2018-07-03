@@ -6,9 +6,11 @@ clone_folder: c:\projects\scap-workbench
 environment:
   matrix:
     - RUBY_VERSION: 25
+      PYTHON_VERSION: 36
 
 install:
     - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+    - set PATH=C:\Python%PYTHON_VERSION%;%PYTHON%\Scripts;%PATH%
     - cmd: gem install asciidoctor
     - cmd: >-
        curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
