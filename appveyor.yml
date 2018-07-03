@@ -4,7 +4,7 @@ configuration: Release
 clone_folder: c:\projects\scap-workbench
 install:
     - cmd: dir C:\
-    - cmd: gem -v
+    - cmd: ruby -v
     - cmd: set SSL_CERT_FILE=C:\ruby24-x64\ssl\cert.pem
     - cmd: gem install asciidoctor
     - cmd: >-
