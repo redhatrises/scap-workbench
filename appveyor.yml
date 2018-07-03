@@ -35,6 +35,8 @@ before_build:
 
     make install
 
+    dir C:\projects\scap-workbench\openscap\build\Release\
+
 build:
     project: c:\projects\scap-workbench\build\openscap.sln
     verbosity: minimal
