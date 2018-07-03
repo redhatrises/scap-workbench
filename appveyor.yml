@@ -12,12 +12,12 @@ install:
     - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
     - set PATH=C:\Python%PYTHON_VERSION%;%PYTHON%\Scripts;%PATH%
     - cmd: gem install asciidoctor
-    - cmd: >-
-       curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
-
-       qt-opensource-windows-x86-vs2010-4.8.7.exe /S
-
-    - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
+      #- cmd: >-
+      # curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
+      #
+      # qt-opensource-windows-x86-vs2010-4.8.7.exe /S
+      #
+      #    - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
 
 cache: c:\tools\vcpkg\installed\
 
@@ -26,6 +26,8 @@ before_build:
     git clone --depth 1 https://github.com/openscap/openscap.git -b master
 
     cd openscap\build
+
+    for /r %%F in (.) do robocopy "%%F" Release\includes\ *.h /COPYALL /R:0
 
     cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
 
