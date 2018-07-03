@@ -2,9 +2,8 @@ version: master-{build}
 image: Visual Studio 2017
 configuration: Release
 clone_folder: c:\projects\scap-workbench
-before_install:
-    - cmd: set SSL_CERT_FILE=C:/ruby24-x64/ssl/cert.pem
 install:
+    - cmd: set SSL_CERT_FILE=C:/ruby24-x64/ssl/cert.pem
     - cmd: >-
        curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
 
