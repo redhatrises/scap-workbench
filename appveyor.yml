@@ -36,5 +36,5 @@ before_build:
     cmake -DSCAP_WORKBENCH_LOCAL_SCAN_ENABLED=FALSE -DSCAP_AS_RPM_EXECUTABLE="" -DSSH_EXECUTABLE="ssh.exe" -DNICE_EXECUTABLE="" -DSETSID_EXECUTABLE="" -DOPENSCAP_LIBRARIES="C:\projects\scap-workbench\openscap\build\Release\openscap.dll" ..
 
 build:
-    project: c:\projects\scap-workbench\build\openscap.sln
+    project: c:\projects\scap-workbench\build\scap-workbench.sln
     verbosity: minimal
