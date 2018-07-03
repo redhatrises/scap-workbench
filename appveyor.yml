@@ -2,10 +2,17 @@ version: master-{build}
 image: Visual Studio 2017
 configuration: Release
 clone_folder: c:\projects\scap-workbench
+
+environment:
+  matrix:
+    - RUBY_VERSION: 25
+    - RUBY_VERSION: 25-x64
+
 install:
+    - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
     - cmd: dir C:\
     - cmd: ruby -v
-    - cmd: set SSL_CERT_FILE=C:\ruby24-x64\ssl\cert.pem
+    - set SSL_CERT_FILE=C:\ruby24-x64\ssl\cert.pem
     - cmd: gem install asciidoctor
     - cmd: >-
        curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
