@@ -11,7 +11,6 @@ environment:
 init:
 - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
 - set PATH=C:\Python%PYTHON_VERSION%;%PYTHON%\Scripts;%PATH%
-- set PATH=%PROGRAMFILES%\openscap;%PATH%
 
 install:
 - cmd: gem install asciidoctor
