@@ -11,6 +11,7 @@ environment:
 init:
 - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
 - set PATH=C:\Python%PYTHON_VERSION%;%PYTHON%\Scripts;%PATH%
+- set PATH=%PROGRAMFILES%\openscap;%PATH%
 
 install:
 - cmd: gem install asciidoctor
@@ -33,7 +34,7 @@ before_build:
 
     msbuild "c:\projects\scap-workbench\openscap\build\openscap.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-    for /r ..\ %%F in (.) do robocopy /ndl /njh /njs /nc /ns "%%F" Release\includes\ *.h /COPYALL
+    cmake -P cmake_install.cmake
 
     cd C:/projects/scap-workbench/build
 
