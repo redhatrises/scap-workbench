@@ -37,13 +37,13 @@ before_build:
 
     cd C:/projects/scap-workbench/build
 
-    cmake -DSCAP_WORKBENCH_LOCAL_SCAN_ENABLED=FALSE -DSCAP_AS_RPM_EXECUTABLE="" -DSSH_EXECUTABLE="ssh.exe" -DNICE_EXECUTABLE="" -DSETSID_EXECUTABLE="" -DOPENSCAP_LIBRARIES="%PROGRAMFILES%\openscap\openscap.dll" -DOPENSCAP_INCLUDE_DIRS="%PROGRAMFILES%\openscap\include\openscap" ..
+    cmake -DSCAP_WORKBENCH_LOCAL_SCAN_ENABLED=FALSE -DSCAP_AS_RPM_EXECUTABLE="" -DSSH_EXECUTABLE="ssh.exe" -DNICE_EXECUTABLE="" -DSETSID_EXECUTABLE="" -DOPENSCAP_LIBRARIES="C:\Program Files (x86)\openscap\openscap.dll" -DOPENSCAP_INCLUDE_DIRS="C:\Program Files (x86)\openscap\include\openscap" ..
 
-    dir %PROGRAMFILES%\openscap\
+    dir C:\Program Files (x86)\openscap\
 
-    dir %PROGRAMFILES%\openscap\include
+    dir C:\Program Files (x86)\openscap\include
 
-    dir %PROGRAMFILES%\openscap\include\openscap
+    dir C:\Program Files (x86)\openscap\include\openscap
 
 build:
     project: c:\projects\scap-workbench\build\scap-workbench.sln
