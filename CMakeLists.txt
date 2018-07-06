@@ -12,10 +12,6 @@ include(GNUInstallDirs)
 find_package(Qt4 REQUIRED QtCore QtGui QtXmlPatterns)
 include(${QT_USE_FILE})
 
-find_path(OPENSCAP_INCLUDE NAMES openscap/oscap.h)
-find_library(OPENSCAP_LIBRARIES NAMES libopenscap.dll openscap.dll)
-set(OPENSCAP_INCLUDE_DIRS "${OPENSCAP_INCLUDE}/openscap")
-
 # This conditional is here to avoid checking openscap version if user supplies
 # custom openscap parameters.
 if (NOT DEFINED OPENSCAP_LIBRARIES OR NOT DEFINED OPENSCAP_INCLUDE_DIRS)
@@ -114,6 +110,8 @@ set(SCAP_WORKBENCH_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_BINARY_DIR}
     # Qt4 is handled by ${QT_USE_FILE} above
     ${OPENSCAP_INCLUDE_DIRS})
+
+message("INCLUDE_DIRS: ${OPENSCAP_INCLUDE_DIRS}")
 
 set(SCAP_WORKBENCH_LINK_LIBRARIES
     ${QT_LIBRARIES}
