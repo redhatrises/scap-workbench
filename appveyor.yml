@@ -15,9 +15,9 @@ init:
 install:
 - cmd: gem install asciidoctor
 - cmd: >-
-    curl -fsS -o qt-opensource-windows-x86-mingw482-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-mingw482-4.8.7.exe
+    curl -fsS -o qt-opensource-windows-x86-vs2008-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2008-4.8.7.exe
 
-    qt-opensource-windows-x86-mingw482-4.8.7.exe /S
+    qt-opensource-windows-x86-vs2008-4.8.7.exe /S
 
 - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
 
