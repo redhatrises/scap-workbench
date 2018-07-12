@@ -1,5 +1,5 @@
 version: master-{build}
-image: Visual Studio 2010
+image: Visual Studio 2013
 configuration: Release
 clone_folder: c:\projects\scap-workbench
 
@@ -19,9 +19,9 @@ install:
 
     vcredist_x86.exe /q
 
-    curl -fsS -o qt-opensource-windows-x86-vs2008-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2008-4.8.7.exe
+    curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
 
-    qt-opensource-windows-x86-vs2008-4.8.7.exe /S
+    qt-opensource-windows-x86-vs2010-4.8.7.exe /S
 
 - cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
 
