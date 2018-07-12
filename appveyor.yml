@@ -15,10 +15,6 @@ init:
 install:
 - cmd: gem install asciidoctor
 - cmd: >-
-    curl -fsS -o vcredist_x86.exe https://www.microsoft.com/en-us/download/confirmation.aspx?id=5555
-
-    vcredist_x86.exe /q
-
     curl -fsS -o qt-opensource-windows-x86-vs2010-4.8.7.exe http://qt.mirrors.tds.net/qt/archive/qt/4.8/4.8.7/qt-opensource-windows-x86-vs2010-4.8.7.exe
 
     qt-opensource-windows-x86-vs2010-4.8.7.exe /S
