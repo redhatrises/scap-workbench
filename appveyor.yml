@@ -19,7 +19,7 @@ install:
 
     qt-opensource-windows-x86-vs2010-4.8.7.exe /S
 
-- cmd: vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
+- cmd: c:\tools\vcpkg\vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
 
 cache: c:\tools\vcpkg\installed\
 
