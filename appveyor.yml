@@ -14,6 +14,7 @@ init:
 - set PATH=C:\Qt\5.11.1;%PATH%
 
 install:
+- cmd: dir C:\Qt\5.11.1
 - cmd: gem install asciidoctor
 - cmd: c:\tools\vcpkg\vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
 
