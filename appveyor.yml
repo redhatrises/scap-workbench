@@ -11,7 +11,7 @@ environment:
 init:
 - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
 - set PATH=C:\Python%PYTHON_VERSION%;%PYTHON%\Scripts;%PATH%
-- set PATH=C:\Qt\5.11.1;%PATH%
+- set PATH=C:\Qt\5.11.1\winrt_x86_msvc2017;%PATH%
 
 install:
 - cmd: dir C:\Qt\5.11.1
