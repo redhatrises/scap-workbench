@@ -1,0 +1,40 @@
+version: master-{build}
+image: Visual Studio 2017
+configuration: Release
+clone_folder: c:\projects\scap-workbench
+
+environment:
+  matrix:
+    - RUBY_VERSION: 25
+      PYTHON_VERSION: 36
+
+init:
+- set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+- set PATH=C:\Python%PYTHON_VERSION%;%PYTHON%\Scripts;%PATH%
+- set PATH=C:\Qt\5.11.1;%PATH%
+
+install:
+- cmd: gem install asciidoctor
+- cmd: c:\tools\vcpkg\vcpkg install curl libxml2 libxslt bzip2 pcre pthreads
+
+cache: c:\tools\vcpkg\installed\
+
+before_build:
+- cmd: >-
+    git clone --depth 1 https://github.com/openscap/openscap.git -b master
+
+    cd openscap\build
+
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+
+    msbuild "c:\projects\scap-workbench\openscap\build\openscap.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+    cmake -P cmake_install.cmake
+
+    cd C:/projects/scap-workbench/build
+
+    cmake -DSCAP_WORKBENCH_LOCAL_SCAN_ENABLED=FALSE -DSCAP_AS_RPM_EXECUTABLE="" -DSSH_EXECUTABLE="ssh.exe" -DNICE_EXECUTABLE="" -DSETSID_EXECUTABLE="" -DOPENSCAP_LIBRARIES="C:\Program Files (x86)\openscap\openscap.dll" -DOPENSCAP_INCLUDE_DIRS="C:\Program Files (x86)\openscap\include\openscap" ..
+
+build:
+    project: c:\projects\scap-workbench\build\scap-workbench.sln
+    verbosity: minimal
