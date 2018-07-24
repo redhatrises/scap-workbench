@@ -17,7 +17,7 @@ before_install:
   - brew install asciidoctor
 
 before_script:
-  - git clone --depth 1 https://github.com/openscap/openscap.git -b master
+  - git clone --depth 1 https://github.com/redhatrises/openscap.git -b master
   - pushd openscap/build
   - cmake -DENABLE_PROBES=FALSE ../
   - make -j 4
